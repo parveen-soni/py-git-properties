@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-git-properties"
+version = "2.1.0"
+description = "Extract git repository metadata, commit info, build version, and export to JSON or Spring Boot Actuator .properties format (zero dependencies)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+    { name = "Parveen Soni", email = "parveensoni14891@gmail.com" }
+]
+maintainers = [
+    { name = "Parveen Soni", email = "parveensoni14891@gmail.com" }
+]
+keywords = [
+    "git",
+    "properties",
+    "py-git-properties",
+    "git-properties",
+    "git-info",
+    "actuator",
+    "spring-boot",
+    "version",
+    "metadata",
+    "devops"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: System :: Software Distribution"
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/parveen-soni/py-git-properties"
+Repository = "https://github.com/parveen-soni/py-git-properties.git"
+Issues = "https://github.com/parveen-soni/py-git-properties/issues"
+
+[project.scripts]
+py-git-properties = "py_git_properties.cli:main"
+git-properties = "py_git_properties.cli:main"
+git-contribution-info = "py_git_properties.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["py_git_properties*", "git_properties*", "git_contribution_info*"]

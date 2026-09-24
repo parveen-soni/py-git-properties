@@ -1,0 +1,48 @@
+name: 'py-git-properties'
+description: 'Extract git repository metadata, commit info, build version, and export to JSON or Spring Boot Actuator .properties format.'
+author: 'Parveen Soni'
+branding:
+  icon: 'git-commit'
+  color: 'blue'
+
+inputs:
+  format:
+    description: 'Output format: json, flat-json, properties'
+    required: false
+    default: 'properties'
+  output:
+    description: 'Target output file path'
+    required: false
+    default: 'git.properties'
+  directory:
+    description: 'Target repository directory'
+    required: false
+    default: '.'
+  print:
+    description: 'Print output to stdout'
+    required: false
+    default: 'false'
+
+outputs:
+  file_path:
+    description: 'Path of the generated git properties file'
+    value: ${{ inputs.output }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Run py-git-properties
+      shell: bash
+      env:
+        PYTHONPATH: ${{ github.action_path }}
+      run: |
+        CMD=(python3 -m py_git_properties -o "${{ inputs.output }}" -f "${{ inputs.format }}" -d "${{ inputs.directory }}")
+        if [ "${{ inputs.print }}" = "true" ]; then
+          CMD+=("-p")
+        fi
+        "${CMD[@]}"

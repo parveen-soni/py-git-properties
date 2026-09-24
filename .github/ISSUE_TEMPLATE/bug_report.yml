@@ -1,0 +1,39 @@
+name: Bug Report
+description: File a bug report to help us improve py-git-properties
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting a bug! Please fill out the sections below.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment Info
+      description: Python version, OS (macOS/Linux/Windows), Git version.
+      placeholder: Python 3.11, Ubuntu 22.04, git 2.40
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps To Reproduce
+      description: Commands or code to reproduce the issue.
+      placeholder: |
+        1. Run `py-git-properties -p -f properties`
+        2. See error ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen.
+    validations:
+      required: false

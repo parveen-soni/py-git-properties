@@ -1,0 +1,8 @@
+- id: py-git-properties
+  name: py-git-properties
+  description: 'Extract git repository metadata and generate git.properties or gitDetails.json'
+  entry: py-git-properties
+  language: python
+  pass_filenames: false
+  always_run: true
+  stages: [commit, push]
