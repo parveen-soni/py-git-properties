@@ -51,5 +51,5 @@ an individual is officially representing the community in public spaces.
 ## Contact
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the project maintainer at `parveensoni14891@gmail.com`. All
+reported to the project maintainer at `thelatestcomputing@gmail.com`. All
 complaints will be reviewed and investigated promptly and fairly.

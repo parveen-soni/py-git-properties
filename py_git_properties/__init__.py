@@ -61,7 +61,7 @@ from .core import (
 )
 from .cli import CliResult, main, run_cli
 
-__version__ = "2.1.0"
+__version__ = "1.0.0"
 
 # camelCase Aliases for JavaScript / npm-git-properties parity
 currentBranch = current_branch

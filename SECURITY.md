@@ -4,15 +4,15 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 2.1.x   | :white_check_mark: |
-| < 2.1   | :x:                |
+| 1.0.x   | :white_check_mark: |
+| < 1.0   | :x:                |
 
 ## Reporting a Vulnerability
 
 If you discover a potential security vulnerability in **py-git-properties**, please do not report it through a public GitHub issue.
 
 Instead, please send an email to:
-**`parveensoni14891@gmail.com`**
+**`thelatestcomputing@gmail.com`**
 
 Please include:
 - A description of the vulnerability and its potential impact.

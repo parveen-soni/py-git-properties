@@ -4,16 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "py-git-properties"
-version = "2.1.0"
+version = "1.0.0"
 description = "Extract git repository metadata, commit info, build version, and export to JSON or Spring Boot Actuator .properties format (zero dependencies)."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "GPL-3.0-or-later" }
 authors = [
-    { name = "Parveen Soni", email = "parveensoni14891@gmail.com" }
+    { name = "Parveen Soni", email = "thelatestcomputing@gmail.com" }
 ]
 maintainers = [
-    { name = "Parveen Soni", email = "parveensoni14891@gmail.com" }
+    { name = "Parveen Soni", email = "thelatestcomputing@gmail.com" }
 ]
 keywords = [
     "git",

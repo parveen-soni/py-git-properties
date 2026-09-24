@@ -56,7 +56,7 @@ class TestGitPropertiesCoreSync(unittest.TestCase):
     def test_build_version(self):
         ver = pgp.build_version()
         self.assertIsInstance(ver, str)
-        self.assertEqual(ver, "2.1.0")
+        self.assertEqual(ver, "1.0.0")
 
     def test_commit_id_abbrev(self):
         abbrev = pgp.commit_id_abbrev()
@@ -152,7 +152,7 @@ class TestGitPropertiesCoreSync(unittest.TestCase):
         self.assertIsInstance(prop_str, str)
         self.assertIn("git.branch=", prop_str)
         self.assertIn("git.commit.id.full=", prop_str)
-        self.assertIn("git.build.version=2.1.0", prop_str)
+        self.assertIn("git.build.version=1.0.0", prop_str)
 
 
 class TestGitPropertiesCoreAsync(unittest.IsolatedAsyncioTestCase):
@@ -273,13 +273,13 @@ class TestCli(unittest.TestCase):
     def test_cli_version(self):
         res = self._run(["--version"])
         self.assertEqual(res.exit_code, 0)
-        self.assertEqual(res.output, "2.1.0")
+        self.assertEqual(res.output, "1.0.0")
 
     def test_cli_print_properties(self):
         res = self._run(["-p", "-f", "properties"])
         self.assertEqual(res.exit_code, 0)
         self.assertIn("git.branch=", res.output)
-        self.assertIn("git.build.version=2.1.0", res.output)
+        self.assertIn("git.build.version=1.0.0", res.output)
 
     def test_cli_print_flat_json(self):
         res = self._run(["-p", "-f", "flat-json"])
@@ -325,7 +325,7 @@ class TestCli(unittest.TestCase):
         import subprocess
         res0 = subprocess.run([sys.executable, "-m", "py_git_properties", "--version"], stdout=subprocess.PIPE, text=True)
         self.assertEqual(res0.returncode, 0)
-        self.assertEqual(res0.stdout.strip(), "2.1.0")
+        self.assertEqual(res0.stdout.strip(), "1.0.0")
 
 
 class TestEdgeCasesAndFallbacks(unittest.TestCase):

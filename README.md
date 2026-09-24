@@ -4,7 +4,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](https://www.python.org/)
-[![Version](https://img.shields.io/badge/version-2.1.0-green.svg)](https://github.com/parveen-soni/py-git-properties)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/parveen-soni/py-git-properties)
 
 A lightweight, high-performance, **zero-dependency** Python library and CLI tool designed to extract comprehensive Git repository metadata, commit history, build versions, and repository state.
 
@@ -164,21 +164,21 @@ host = gp.build_host()
 | :--- | :--- | :--- |
 | `git.branch` | `main` | Current branch name or CI reference |
 | `git.build.host` | `builder-worker-1` | Hostname where build was executed |
-| `git.build.version` | `2.1.0` | Project version from `pyproject.toml`, `setup.cfg`, or `package.json` |
+| `git.build.version` | `1.0.0` | Project version from `pyproject.toml`, `setup.cfg`, or `package.json` |
 | `git.build.user.name` | Custom Map / CI | Name of the user running the build |
 | `git.build.user.email`| Custom Map / CI | Email of the user running the build |
 | `git.commit.id.abbrev`| `6450dbf` | 7-character commit SHA |
 | `git.commit.id.full` | `6450dbfe9c84874331425e41f4607cb5e9678a4c` | Full 40-character commit SHA |
-| `git.commit.id.describe` | `v2.0.0-1-g6450dbf` | Output of `git describe` |
+| `git.commit.id.describe` | `v1.0.0-1-g6450dbf` | Output of `git describe` |
 | `git.commit.message.short` | `Fix issue with build` | Subject line of the latest commit |
 | `git.commit.message.full` | `Fix issue with build\n\nDetailed explanation` | Full message of the latest commit |
 | `git.commit.user.name` | `Parveen Soni` | Commit author name |
-| `git.commit.user.email`| `parveensoni14891@gmail.com` | Commit author email |
+| `git.commit.user.email`| `thelatestcomputing@gmail.com` | Commit author email |
 | `git.commit.time` | `Fri Nov 29 13:43:03 2024 +0530` | Date string of the latest commit |
 | `git.dirty` | `False` | `True` if uncommitted changes exist in working tree |
 | `git.remote.origin.url`| `https://github.com/parveen-soni/py-git-properties.git` | Remote origin repository URL |
-| `git.tags` | `v2.1.0` | Git tags associated with the current commit |
-| `git.closest.tag.name` | `v2.0.0` | Name of the closest tag |
+| `git.tags` | `v1.0.0` | Git tags associated with the current commit |
+| `git.closest.tag.name` | `v1.0.0` | Name of the closest tag |
 | `git.closest.tag.commit.count` | `1` | Commits since closest tag |
 | `git.total.commit.count` | `45` | Total number of commits across the repository |
 
@@ -248,7 +248,7 @@ Add `py-git-properties` to your `.pre-commit-config.yaml` to ensure git metadata
 ```yaml
 repos:
   - repo: https://github.com/parveen-soni/py-git-properties
-    rev: v2.1.0
+    rev: v1.0.0
     hooks:
       - id: py-git-properties
         args: ["-o", "git.properties", "-f", "properties"]
@@ -262,7 +262,7 @@ Use `py-git-properties` as an official GitHub Action in your CI/CD workflows:
 
 ```yaml
 - name: Generate Git Properties
-  uses: parveen-soni/py-git-properties@v2
+  uses: parveen-soni/py-git-properties@v1
   with:
     format: 'properties'
     output: 'git.properties'
