@@ -1,4 +1,4 @@
-"""Comprehensive unit tests for git-properties / git-contribution-info.
+"""Comprehensive unit tests for py-git-properties.
 
 Tests all sync APIs, async APIs, camelCase aliases, CLI modes, formatters,
 worktree handling, and CI fallbacks with zero external dependencies.
@@ -15,9 +15,6 @@ from pathlib import Path
 from unittest.mock import patch
 
 import py_git_properties as pgp
-import git_properties as gp
-import git_contribution_info as gci
-import git_info as gi
 from py_git_properties.constants import (
     KEY_GIT_BRANCH,
     KEY_GIT_BUILD_HOST,
@@ -253,24 +250,6 @@ class TestCamelCaseAliases(unittest.TestCase):
         self.assertIs(pgp.createGitInfoFileAsync, pgp.create_git_info_file_async)
 
 
-class TestAliasPackages(unittest.TestCase):
-    """Verify git_properties, git_contribution_info, and git_info aliases."""
-
-    def test_gp_exports(self):
-        self.assertEqual(gp.__version__, pgp.__version__)
-        self.assertIs(gp.get_git_prop, pgp.get_git_prop)
-        self.assertIs(gp.create_git_info_file, pgp.create_git_info_file)
-
-    def test_gci_exports(self):
-        self.assertEqual(gci.__version__, pgp.__version__)
-        self.assertIs(gci.get_git_prop, pgp.get_git_prop)
-        self.assertIs(gci.create_git_info_file, pgp.create_git_info_file)
-
-    def test_git_info_exports(self):
-        self.assertEqual(gi.__version__, pgp.__version__)
-        self.assertIs(gi.get_git_prop, pgp.get_git_prop)
-
-
 class TestCli(unittest.TestCase):
     """Test CLI flags, output formats, and error handling."""
 
@@ -347,18 +326,6 @@ class TestCli(unittest.TestCase):
         res0 = subprocess.run([sys.executable, "-m", "py_git_properties", "--version"], stdout=subprocess.PIPE, text=True)
         self.assertEqual(res0.returncode, 0)
         self.assertEqual(res0.stdout.strip(), "2.1.0")
-
-        res1 = subprocess.run([sys.executable, "-m", "git_properties", "--version"], stdout=subprocess.PIPE, text=True)
-        self.assertEqual(res1.returncode, 0)
-        self.assertEqual(res1.stdout.strip(), "2.1.0")
-
-        res2 = subprocess.run([sys.executable, "-m", "git_contribution_info", "--version"], stdout=subprocess.PIPE, text=True)
-        self.assertEqual(res2.returncode, 0)
-        self.assertEqual(res2.stdout.strip(), "2.1.0")
-
-        res3 = subprocess.run([sys.executable, "git_info.py", "--version"], stdout=subprocess.PIPE, text=True)
-        self.assertEqual(res3.returncode, 0)
-        self.assertEqual(res3.stdout.strip(), "2.1.0")
 
 
 class TestEdgeCasesAndFallbacks(unittest.TestCase):

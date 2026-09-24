@@ -51,9 +51,7 @@ Issues = "https://github.com/parveen-soni/py-git-properties/issues"
 
 [project.scripts]
 py-git-properties = "py_git_properties.cli:main"
-git-properties = "py_git_properties.cli:main"
-git-contribution-info = "py_git_properties.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["py_git_properties*", "git_properties*", "git_contribution_info*"]
+include = ["py_git_properties*"]

@@ -2,8 +2,6 @@
 
 Can be run via:
   py-git-properties [options]
-  git-properties [options]
-  git-contribution-info [options]
   python -m py_git_properties [options]
 """
 
@@ -35,8 +33,6 @@ py-git-properties CLI
 
 Usage:
   py-git-properties [options]
-  git-properties [options]
-  git-contribution-info [options]
 
 Options:
   -o, --output <file>    Output file path (default: gitDetails.json or git.properties)

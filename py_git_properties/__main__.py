@@ -1,4 +1,4 @@
-"""Executable entry point when running python -m git_properties."""
+"""Executable entry point when running python -m py_git_properties."""
 
 from .cli import main
 

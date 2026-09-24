@@ -35,8 +35,6 @@ jobs:
       - name: Verify CLI commands
         run: |
           py-git-properties --version
-          git-properties --version
-          git-contribution-info --version
           py-git-properties --print --format properties
           py-git-properties --print --format json
           py-git-properties --print --format flat-json

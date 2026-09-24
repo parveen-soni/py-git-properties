@@ -41,8 +41,6 @@ cd py-git-properties
 pip install -e .
 ```
 
-`py-git-properties`, `git-properties`, and `git-contribution-info` CLI commands are all registered.
-
 ---
 
 ## CLI Usage
@@ -87,10 +85,6 @@ You can also run the tool directly via Python:
 
 ```bash
 python -m py_git_properties [options]
-# or
-python -m git_properties [options]
-# or
-python git_info.py [options]
 ```
 
 ---
@@ -101,7 +95,6 @@ python git_info.py [options]
 
 ```python
 import py_git_properties as gp
-# Note: 'import git_properties as gp' is also supported as an alias
 
 # 1. Retrieve all properties as a flat dictionary
 props = gp.get_git_prop()
